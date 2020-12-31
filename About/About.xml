@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <!-- The name of the mod -->
+    <name>Australian Cattle Dog</name>
+    
+    <!-- The mod author names, usually set to your Steam/Forum name -->
+    <author>Poglet</author>
+    
+    <!-- A URL to be displayed on your mod info page(if available). Can be set to link to anything. Most link it to their Github/Workshop page/forum post. -->
+    <url>https://github.com/poglet</url>
+    
+    <!-- Added in 1.0. Please make it human readable. Avoid acronyms where possible. Normally qualifiers seperated by periods.-->
+    <packageId>Poglet.Animals.CattDog</packageId>
+    
+    <!-- Supported version lists which versions of Rimworld your mod is compatible with. If your mod doesn't break across versions, lists them all here. -->
+    <supportedVersions>
+        <li>1.1</li>
+        <li>1.2</li>
+    </supportedVersions>
+    
+    <!-- Describes your mod, can be multiple lines long. -->
+    <description>Adds the Australian Cattle Dog to the game.
+    </description>
+	
+    <!-- 
+	List of other mods which your mod requires to function. 
+    <modDependencies>
+        <li>
+            <packageId>Unknown (help extend this)</packageId>
+            <displayName>Unknown (help extend this)</displayName>
+            <downloadUrl>Unknown (help extend this)</downloadUrl>
+            <steamWorkshopUrl>Unknown (help extend this)</steamWorkshopUrl>
+        </li>
+    </modDependencies>
+    <modDependenciesByVersion>
+        <v1.1>
+            <li>
+                <packageId>Unknown (help extend this)</packageId>
+                <displayName>Unknown (help extend this)</displayName>
+                <steamWorkshopUrl>Unknown (help extend this)</steamWorkshopUrl>
+                <downloadUrl>Unknown (help extend this)</downloadUrl>
+            </li>
+        </v1.1>
+    </modDependenciesByVersion>
+	-->
+    
+    <!-- Lists the mods which should be loaded before your mod. Helps ensure your dependencies are loaded in first. -->
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+    </loadAfter>
+    
+    <!-- List of packageIds of any mods which are incompatible with your mod. -->
+    <incompatibleWith>
+        <!-- <li>erdelf.HumanoidAlienRaces</li> -->
+    </incompatibleWith>
+</ModMetaData>

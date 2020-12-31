@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>cattledog</defName>
+    <label>cattle dog</label>
+    <description>The Australian Cattle Dog is an extremely intelligent, active, and sturdy dog breed. Developed by Australian settlers to handle herds of cattle on expansive ranches, they’re still used today as a herding dog.</description>
+    <statBases>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <MoveSpeed>5.0</MoveSpeed>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9.7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9.7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>14.2</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <!-- Easy to get dirty on the floor, will it appear in early pets? Set between 1 and 0 -->
+      <petness>1</petness>
+      <!-- 体の大きさ。胃袋のサイズ、体重、運搬可能量、などにかかわってきます -->
+      <baseBodySize>0.7</baseBodySize>
+      <!-- Body size. It depends on the size of the stomach, weight, amount that can be carried, etc. -->
+      <baseHungerRate>0.4</baseHungerRate>
+      <!-- You need to specify the Def of the skin. Let's use vanilla when it's troublesome-->
+      <leatherDef>Leather_Dog</leatherDef>
+      <baseHealthScale>0.95</baseHealthScale>
+      <!-- Taming probability when making friends-->
+      <nameOnTameChance>1</nameOnTameChance>
+      <!-- The type of food. You can eat only wood or just meat. Easy to compare with vanilla animals-->
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <!-- Gestation period. Most vanilla animals are between 10-60 -->
+      <gestationPeriodDays>25</gestationPeriodDays>
+      <!-- How much can you train by training? If it is None, nothing can be done. Same as a cat or a mouse-->
+      <trainability>Advanced</trainability>
+      <!-- Wildness. Affects ease of training and ease of handling. It may also affect the degree to which the floor is soiled-->
+      <wildness>0</wildness>
+      <nuzzleMtbHours>24</nuzzleMtbHours>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2, 1.7)</li>
+          <li>(2.5, 0.7)</li>
+          <li>(3, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <!--Longevity, older individuals are more likely to have scars or illness -->
+      <lifeExpectancy>15</lifeExpectancy>
+      <!--From what age to what stage of growth -->
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <!--Here, there are 3 levels, but you can set it to 1 or 10 levels. If you want to do it -->
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.5</minAge>
+          <soundWounded>Pawn_Dog_Injured</soundWounded>
+          <soundDeath>Pawn_Dog_Death</soundDeath>
+          <soundCall>Pawn_Dog_Call</soundCall>
+          <soundAngry>Pawn_Dog_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <!--What type of animal it belongs to -->
+    <tradeTags>
+      <li>AnimalCommon</li>
+      <li>AnimalPet</li>
+    </tradeTags>
+  </ThingDef>
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>cattledog</defName>
+    <label>cattle dog</label>
+    <race>cattledog</race>
+    <!-- Whether it appears as a human hunt. True without description. Appear. -->
+    <canArriveManhunter>false</canArriveManhunter>
+    <!-- In addition to being an index for hunting carnivorous animals, the number of times it appears as human hunting will change. -->
+    <combatPower>60</combatPower>
+    <ecoSystemWeight>0.7</ecoSystemWeight>
+    <!-- You can specify the graphic and drawing size for each life stage.-->
+    <lifeStages>
+      <li>
+        <label>cattle dog puppy</label>
+        <labelPlural>cattle dog puppies</labelPlural>
+        <bodyGraphicData>
+          <!--　Please prepare all three sets of data. Please see the manual for details. -->
+          <texPath>Things/Pawn/Animal/cattledog</texPath>
+          <!-- You can change the drawing size. If it is 1 times, it is quite small -->
+          <drawSize>0.85</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Husky/Dessicated_Husky</texPath>
+          <drawSize>0.85</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/cattledog</texPath>
+          <drawSize>1.25</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.20, 0.3, 0.20)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Husky/Dessicated_Husky</texPath>
+          <drawSize>1.25</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/cattledog</texPath>
+          <drawSize>1.49</drawSize>
+          <shaderType>CutoutComplex</shaderType>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <!-- Specify a dry corpse. That is the bone -->
+          <texPath>Things/Pawn/Animal/Husky/Dessicated_Husky</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+</Defs>
